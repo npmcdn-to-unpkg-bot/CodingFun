@@ -1,0 +1,30 @@
+Body{
+    background:#EAFAF1;
+}
+
+#main{
+    max-width           : 200px;
+    margin              :0 auto;
+    background-color    :#52BE80;
+}
+
+.simple{
+    width               : 500px;
+    margin              : 20px auto;
+    font-weight: bold;
+    -webkit-box-sizing  : border-box;
+    -moz-box-sizing     : border-box;
+    box-sizing          : border-box;
+}
+
+.fancy{
+    width               : 500px;
+    margin              : 20px auto;
+    padding             : 50px;
+    border-width        : 100px;
+    -webkit-box-sizing  : border-box;
+    -moz-box-sizing     : border-box;
+    box-sizing          : border-box;
+}
+    
+    
