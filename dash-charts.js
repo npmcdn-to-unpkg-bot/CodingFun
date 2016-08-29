@@ -70,6 +70,14 @@
 /*** second Chart in Dashboard page ***/
 
 	$(document).ready(function() {
+     
+        var FailedComplianceServersQty = localStorage.getItem("FailedComplianceServersQty");
+        var TotalServers = localStorage.getItem("TotalServers");
+        var Percent = (eval(FailedComplianceServersQty)/eval(TotalServers)) * 100;
+        var Ratio = 100 - Percent;
+        
+        $('#space').siblings('h2').html("<h2>"+ eval(Percent.toFixed(1)) + "%</h2>");
+        
 		info = new Highcharts.Chart({
 			chart: {
 				renderTo: 'space',
@@ -98,8 +106,8 @@
 				name: 'SiteInfo',
 				innerSize: '65%',
 				data: [
-					{ name: 'Used', y: 65.0, color: '#fa1d2d' },
-					{ name: 'Rest', y: 35.0, color: '#3d3d3d' }
+					{ name: 'Used', y: eval(Percent.toFixed(1)), color: '#fa1d2d' },
+					{ name: 'Rest', y: eval(Ratio.toFixed(1)), color: '#3d3d3d' }
 				],
 				dataLabels: {
 					enabled: false,

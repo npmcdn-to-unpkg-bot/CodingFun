@@ -34,11 +34,36 @@ $(document).ready(function () {
       
     /* HIDE THE DATA */
     $('#container').hide();
-    
+
     $( "#submitform" ).submit(function( event ) {
          var myFilteredRows;
          var myServers=[];
-              
+         var myComplianceServers=[];
+         var FailedCompliance = 0;
+        
+        /* For comparison BIOS version */   
+        function compVersions(strV1, strV2) {
+            var nRes = 0
+                , parts1 = strV1.split('.')
+                , parts2 = strV2.split('.')
+                , nLen = Math.max(parts1.length, parts2.length);
+
+                for (var i = 0; i < nLen; i++) {
+                        var nP1 = (i < parts1.length) ? parseInt(parts1[i], 10) : 0
+                        , nP2 = (i < parts2.length) ? parseInt(parts2[i], 10) : 0;
+
+                if (isNaN(nP1)) { nP1 = 0; }
+                    if (isNaN(nP2)) { nP2 = 0; }
+
+                        if (nP1 != nP2) {
+                                nRes = (nP1 > nP2) ? 1 : -1;
+                    break;
+                }
+            }
+
+            return nRes;
+        };
+    
         
          console.log("Total Servers:",CSVtable.fnGetData().length-1);
          localStorage.setItem("TotalServers",CSVtable.fnGetData().length-1);
@@ -133,6 +158,21 @@ $(document).ready(function () {
          myFilteredRows = CSVtable._('tr', {"filter":"applied"});
          console.log("PowerEdge M620",myFilteredRows.length);
          localStorage.setItem("ServerModel_M620",myFilteredRows.length);
+        
+         for(var j=0;j<myFilteredRows.length;j++)
+         {
+                 if (compVersions(myFilteredRows[j][10], "2.5.4")== -1)
+                 {
+                    FailedCompliance++; 
+                    myComplianceServers.push(myFilteredRows);
+                    console.log(myFilteredRows[j][10]);
+                 }
+         }
+         localStorage.setItem("FailedComplianceServersQty",FailedCompliance);
+         localStorage.setItem("FailedComplianceServers",myComplianceServers);
+         console.log("Failed BIOS compliance servers:",FailedCompliance);
+        
+         localStorage.setItem("ComplianceServers",JSON.stringify(myComplianceServers)); 
          
          CSVtable.fnFilter("PowerEdge R620");
          myFilteredRows = CSVtable._('tr', {"filter":"applied"});
@@ -227,7 +267,7 @@ $(document).ready(function () {
          localStorage.setItem("SP_510",myFilteredRows.length);
 
         //FOR DEBUGGING PURPOSE
-        //event.preventDefault();
+         //event.preventDefault();
          
     });
     
