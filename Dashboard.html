@@ -1,3 +1,11 @@
+/**
+ * Author: Say Heian Lee
+ * Date  : 26 August 2016
+ *
+ * This page gets all the processed variable from Main UI and display the high
+ * charts here. Some Dash units has two level pages.
+ * 
+ */
 <!doctype html>
 <html><head>
     <meta charset="utf-8">
@@ -12,6 +20,7 @@
     <link href="assets/css/font-style.css" rel="stylesheet">
     <link href="assets/css/flexslider.css" rel="stylesheet">
     <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="assets/css/DialogTable.css" rel="stylesheet">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 
     <style type="text/css">
@@ -56,14 +65,18 @@ $(document).ready(function () {
     var TotalServers = localStorage.getItem("TotalServers");
     $('#server bold').html("<bold>"+TotalServers+"</bold>");
     
+    $('#email').on("click",function(){
+            $('#emailModal').modal('show');
+    });
       
     $( "#load" ).on( "click", function() {
-           var myServers=[];
+           //To SHOW real servers
+           /*var myServers=[];
            myServers=JSON.parse(localStorage.getItem("Servers"));
            for (var i=0;i<myServers.length;i++)
             {
                    $('#modal').append("<p>"+myServers[i]+"</p>");
-            }
+            }*/
            $('#myModal').modal('show');
     });
    
@@ -279,28 +292,104 @@ $(document).ready(function () {
 
     <!-- COOL DIALOG BOX TO SHOW INFORMATION -->  
 
-    <!-- Modal -->
+    <!--Network Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" id="NetworkModal">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Server Records</h4>
+        <h4 class="modal-title" id="myModalLabel">Network Timeout Servers</h4>
       </div>
       <div class="modal-body" id="modal">
-        <!--<p>euiqugiax1dj.us.dell.com</p>
-        <p>ausnovasvm03.us.dell.com</p> 
-        <p>penpldrglwlsa01.pen.apac.dell.com</p>
-        <p>ausnovasvm01.us.dell.com</p>
-        <p>auspoppprdb02.us.dell.com</p>-->
+          <div id="contenitore">
+              <div class="left">
+                  <table>
+                      <caption>Server Records</caption>
+                      <tbody>
+                      <tr>
+                          <td>euiqugiax1dj.us.dell.com</td>
+                          <td>Kommana, Chuck</td>
+                          <td>Connection Time Out</td>
+                          <td><span id="email" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#336699">&nbsp;</td>
+                      </tr>
+                      <tr>
+                          <td>ausnovasvm03.us.dell.com</td>
+                          <td>Szymanski, Carlon</td>
+                          <td>Connection Time Out</td>
+                          <td><span id="email" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#003366">&nbsp;</td>
+                      </tr>
+                      <tr>
+                          <td>penpldrglwlsa01.pen.apac.dell.com</td>
+                          <td>Wheeler, John W</td>
+                          <td>Connection Time Out</td>
+                          <td><span id="email" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#ff6600">&nbsp;</td></tr>
+                      <tr>
+                          <td>ausnovasvm01.us.dell.com</td>
+                          <td>Costelloe, Andy</td>
+                          <td>Connection Time Out</td>
+                          <td><span id="email" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#ffcc00">&nbsp;</td></tr>
+                  </tbody></table>
+                 
+              </div>
+
+          </div>
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary"  data-toggle="collapse" data-target="#SaveAsCSV">Save as CSV</button>
+        <br>
+          <div class="row">
+              <div class="span4 collapse-group">
+                  <p class="collapse" id="SaveAsCSV">File Saved as NetWork.csv</p>
+             </div>
+          </div>
       </div>
     </div>
   </div>
 </div>
+    <!--Email Modal -->
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" id="EmailModalHeader">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name" placeholder="someone@dell.com" color="#000">
+          </div>
+         <div class="form-group">
+            <label for="recipient-name" class="control-label">Subject:</label>
+            <input type="text" class="form-control" id="subject" placeholder="Network Timeout">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text" placeholder="euiqugiax1dj.us.dell.com,Kommana, Chuck,Connection Time Out"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#viewdetails">Send message</button>
+        <br>
+          <div class="row">
+              <div class="span4 collapse-group">
+                  <p class="collapse" id="viewdetails">EMAIL sent!!!</p>
+             </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+      
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

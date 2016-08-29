@@ -1,3 +1,11 @@
+/**
+ * Author: Say Heian Lee
+ * Date  : 26 August 2016
+ *
+ * This is the Main UI for loading the CSV file from LINUX servers. It will keep
+ * track all the variables in the localstorage.
+ * 
+ */
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,8 +38,7 @@ $(document).ready(function () {
     $( "#submitform" ).submit(function( event ) {
          var myFilteredRows;
          var myServers=[];
-        
-        
+              
         
          console.log("Total Servers:",CSVtable.fnGetData().length-1);
          localStorage.setItem("TotalServers",CSVtable.fnGetData().length-1);
@@ -91,11 +98,13 @@ $(document).ready(function () {
          CSVtable.fnFilter("CONNECTION TIMED OUT");
          myFilteredRows = CSVtable._('tr', {"filter":"applied"});
          console.log("Total NETWORK failed:",myFilteredRows.length);
+        
          for(var i=0;i<myFilteredRows.length;i++)
          {
                  myServers.push(myFilteredRows[i][1]);
                  console.log(myFilteredRows[i][1]);
          }
+        
          localStorage.setItem("NetworkFailed",myFilteredRows.length);
          localStorage.setItem("Servers",JSON.stringify(myServers)); 
         
@@ -216,9 +225,7 @@ $(document).ready(function () {
          myFilteredRows = CSVtable._('tr', {"filter":"applied"});
          console.log("SP 5.10",myFilteredRows.length);
          localStorage.setItem("SP_510",myFilteredRows.length);
-        
-       
-      
+
         //FOR DEBUGGING PURPOSE
         //event.preventDefault();
          
