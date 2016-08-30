@@ -68,6 +68,21 @@ h5 {
     text-align: center;
 }
 
+#viewCompliance {
+    font-size: 20px;
+    color: #FDFEFE;
+    background-color: #5499C7;
+    border: 3px solid #D6EAF8;
+    text-align: center;
+}
+
+#SaveAsCompliance {
+    font-size: 20px;
+    color: #FDFEFE;
+    background-color: #5499C7;
+    border: 3px solid #D6EAF8;
+    text-align: center;
+}
 
 #NetworkModal {
       background-color: #b2c831;    
@@ -75,6 +90,10 @@ h5 {
 
 #EmailModalHeader{
     background-color: #b2c831;    
+}
+
+#BIOSModal {
+      background-color: #b2c831;    
 }
 
 input::-webkit-input-placeholder {

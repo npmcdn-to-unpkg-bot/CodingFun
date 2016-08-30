@@ -65,8 +65,16 @@ $(document).ready(function () {
     var TotalServers = localStorage.getItem("TotalServers");
     $('#server bold').html("<bold>"+TotalServers+"</bold>");
     
+    $('#email').on("click",function(){
+            $('#emailModal').modal('show');
+    });
+    
+    $('#emailCompliance').on("click",function(){
+            $('#emailComplianceModal').modal('show');
+    });
+    
     $('#space').on("click",function(){
-            $('#myModal').modal('show');
+           $('#ComplianceModal').modal('show');
     });
       
     $( "#load" ).on( "click", function() {
@@ -389,7 +397,115 @@ $(document).ready(function () {
   </div>
 </div>
  
+    <!--Compliance Modal -->
+<div class="modal fade" id="ComplianceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" id="BIOSModal">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="BIOSModalLabel">BIOS version (2.5.4) not compliance</h4>
+      </div>
+      <div class="modal-body" id="modal">
+          <div id="contenitore">
+              <div class="left">
+                  <table>
+                      <caption>Server Records</caption>
+                      <tbody>
+                      <tr>
+                          <td>ausplotmapdb02.us.dell.com</td>
+                          <td>Szymanski, Carlon</td>
+                          <td>2.5.2 </td>
+                          <td><span id="emailCompliance" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#336699">&nbsp;</td>
+                      </tr>
+                      <tr>
+                          <td>ausflsalupdb02.us.dell.com</td>
+                          <td>Yanez, Juanita</td>
+                          <td>2.4.3</td>
+                          <td><span id="emailCompliance" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#003366">&nbsp;</td>
+                      </tr>
+                      <tr>
+                          <td>ausplcowcdb02.us.dell.com</td>
+                          <td>Wheeler, John W</td>
+                          <td>2.4.3</td>
+                          <td><span id="emailCompliance" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#ff6600">&nbsp;</td></tr>
+                      <tr>
+                          <td>ausplharcom01.us.dell.com</td>
+                          <td>Stangl, Gabriela</td>
+                          <td>2.5.2</td>
+                          <td><span id="emailCompliance" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#ffcc00">&nbsp;</td></tr>
+                      <tr>
+                          <td>ausplm2gdaodb10.us.dell.com</td>
+                          <td>Kommana, Chuck</td>
+                          <td>2.5.2</td>
+                          <td><span id="emailCompliance" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#ffcc00">&nbsp;</td></tr>
+                      <tr>
+                          <td>aussoaesprdap06.us.dell.com</td>
+                          <td>Herpich, Fernando</td>
+                          <td>2.4.3</td>
+                          <td><span id="emailCompliance" aria-hidden="true" class="li_mail fs1"></span></td>
+                          <td style="background-color:#ffcc00">&nbsp;</td></tr>
+                  </tbody></table>
+                 
+              </div>
+
+          </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  data-toggle="collapse" data-target="#SaveAsCompliance">Save as CSV</button>
+        <br>
+          <div class="row">
+              <div class="span4 collapse-group">
+                  <p class="collapse" id="SaveAsCompliance">File Saved as Compliance.csv</p>
+             </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>  
       
+        <!--Email Modal For NOT compliance-->
+<div class="modal fade" id="emailComplianceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" id="EmailModalHeader">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name" placeholder="someone@dell.com" color="#000">
+          </div>
+         <div class="form-group">
+            <label for="recipient-name" class="control-label">Subject:</label>
+            <input type="text" class="form-control" id="subject" placeholder="BIOS version NOT compliance">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text" placeholder="ausplotmapdb02.us.dell.com,Szymanski, Carlon,BIOS version NOT compliance"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#viewCompliance">Send message</button>
+        <br>
+          <div class="row">
+              <div class="span4 collapse-group">
+                  <p class="collapse" id="viewCompliance">EMAIL sent!!!</p>
+             </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
