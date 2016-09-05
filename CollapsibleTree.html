@@ -104,7 +104,8 @@
 		.attr("height", height + margin.top + margin.bottom)
 	  	.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+    
+ 
 	//recursively collapse children
 	function collapse(d) {
 		if (d.children) {
@@ -152,6 +153,13 @@
 			data: select2_data,
 			containerCssClass: "search"
 		});
+        var paths = searchTree(root,"IP: 10.160.121.183",[]);
+		if(typeof(paths) !== "undefined"){
+			openPaths(paths);
+		}
+		else{
+			alert(e.object.text+" not found!");
+		}
 	});
 	//attach search box listener
 	$("#search").on("select2-selecting", function(e) {
