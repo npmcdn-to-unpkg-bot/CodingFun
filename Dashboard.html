@@ -1,11 +1,11 @@
-/**
+<!--
  * Author: Say Heian Lee
  * Date  : 26 August 2016
  *
- * This page gets all the processed variable from Main UI and display the high
+ * This page gets all the processed variable from Main UI and display * the high
  * charts here. Some Dash units has two level pages.
  * 
- */
+ *-->
 <!doctype html>
 <html><head>
     <meta charset="utf-8">
@@ -75,6 +75,10 @@ $(document).ready(function () {
     
     $('#space').on("click",function(){
            $('#ComplianceModal').modal('show');
+    });
+    
+    $('#segment').on("click",function(){
+          window.open("CollapsibleTree.html");
     });
       
     $( "#load" ).on( "click", function() {
@@ -253,7 +257,7 @@ $(document).ready(function () {
       		<div class="dash-unit">
 	      		<dtitle>Server By Segment</dtitle>
 	      		<hr>
-	      		<div class="cont">
+	      		<div id="segment" class="cont">
 					<p id="GOCQ"><bold>879</bold> | <ok>Production</ok></p>
 					<br>
                     <p id="DCS"><bold>377</bold> |  <ok>Pre Production</ok></p>
@@ -312,8 +316,22 @@ $(document).ready(function () {
           <div id="contenitore">
               <div class="left">
                   <table>
-                      <caption>Server Records</caption>
+                      <caption></caption>
                       <tbody>
+                      <tr>
+                          <th>
+                          &nbsp ServerVM
+                          </th>   
+                          <th>
+                          App Owner
+                          </th>
+                          <th>
+                          Item
+                          </th>
+                          <th>
+                          Action 
+                          </th>
+                      </tr>
                       <tr>
                           <td>euiqugiax1dj.us.dell.com</td>
                           <td>Kommana, Chuck</td>
@@ -409,8 +427,22 @@ $(document).ready(function () {
           <div id="contenitore">
               <div class="left">
                   <table width="800">
-                      <caption>Server Records</caption>
+                      <caption></caption>
                       <tbody>
+                      <tr>
+                          <th>
+                          &nbsp ServerVM
+                          </th>   
+                          <th>
+                          App Owner
+                          </th>
+                          <th>
+                          BIOS
+                          </th>
+                          <th>
+                          Action 
+                          </th>
+                      </tr>
                       <tr>
                           <td>ausplotmapdb02.us.dell.com</td>
                           <td>Szymanski, Carlon</td>

@@ -1,0 +1,255 @@
+{
+ "name": "Segment",
+ "children": [
+  {
+   "name": "GOCQ",
+   "children": [
+    {
+     "name": "ausslsoadb02",
+     "children": [
+      {"name": "FQDN: ausslsoadb02.us.dell.com", "size": 3938},
+      {"name": "System Role: Performance", "size": 3812},
+      {"name": "App Name: Oracle Service Bus", "size": 6714},
+      {"name": "App Owner: Kommana, Chuck", "size": 743}
+     ]
+    },
+    {
+     "name": "ausulfbeb2bms01",
+     "children": [
+      {"name": "FQDN: ausulfbeb2bms01.us.dell.com", "size": 3534},
+      {"name": "System Role: SIT/UAT", "size": 5731},
+      {"name": "App Name: HRDM - Human Resources Document Management", "size": 7840},
+      {"name": "App Owner: Stangl, Gabriela", "size": 3416}
+     ]
+    },
+    {
+     "name": "ausplesdata10",
+     "children": [
+      {"name": "FQDN: ausplesdata10.us.dell.com", "size": 3534},
+      {"name": "System Role: PRODUCTION", "size": 5731},
+      {"name": "App Name: WEBLOGIC PLATFORM", "size": 7840},
+      {"name": "App Owner: Kommana, Chuck", "size": 3416}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DCS",
+   "children": [
+    {"name": "ausddelora1", "size": 17010},
+    {"name": "ausfldpgtmapp04", "size": 5842},
+    {
+     "name": "austlpdcamdb01",
+     "children": [
+         {  "name": "Basic", 
+            "children": [
+            {"name": "ausplesdata10.us.dell.com", "size": 3534},
+            {"name": "PRODUCTION", "size": 5731},
+            {"name": "WEBLOGIC PLATFORM", "size": 7840},
+            {"name": "Kommana, Chuck", "size": 3416}
+            ] 
+      },
+         {
+             "name": "Network",
+             "children":[
+             {"name": "IP: 10.160.121.183","size": 2047},
+             {"name": "Subnet: 255.255.252.0","size": 2047},
+             {"name": "MAC: d0:43:1e:d6:eb:e6","size": 2047},
+             {"name": "Gateway: 10.160.120.1","size": 2047}
+             ]
+      },
+      {     "name": "Hardware",
+            "children": [
+             {"name": "PowerEdge M630","size": 2047},
+             {"name": "4WBS482","size": 2047},
+             {"name": "BIOS 1.4.5","size": 2047},
+             {"name": "PERC H730P","size": 2047}
+            ]
+      },
+      {"name": "Storage", "size": 8746},
+      {"name": "Cluster", "size": 2202},
+      {"name": "Database", "size": 1382},
+      {"name": "ServiceNow", "size": 1629},
+      {"name": "DC", "size": 1675},
+      {"name": "Provision", "size": 2042}
+     ]
+    },
+    {"name": "auspldpgtmweb01", "size": 1041},
+    {"name": "penulsit3gdrg04", "size": 5176},
+    {"name": "ausilsiwlsm22", "size": 449},
+    {"name": "ausplotmapdb02", "size": 5593},
+    {"name": "ausplcowcssap01", "size": 5534},
+    {"name": "ausplbrmdmapp03", "size": 9201},
+    {"name": "ausplbhm2db03", "size": 19975},
+    {"name": "ausplabi11", "size": 1116},
+    {"name": "ausdlappdynae03", "size": 6006}
+   ]
+  },
+  {
+   "name": "ETS",
+   "children": [
+    {
+     "name": "Basic",
+     "children": [
+       {"name": "ausplesdata10.us.dell.com", "size": 3534},
+       {"name": "PRODUCTION", "size": 5731},
+       {"name": "WEBLOGIC PLATFORM", "size": 7840},
+       {"name": "Kommana, Chuck", "size": 3416}
+     ]
+    },
+    {"name": "Network", "size": 1759},
+    {"name": "Hardware", "size": 2165},
+    {"name": "Storage", "size": 586},
+    {"name": "Cluster", "size": 3331},
+    {"name": "Database", "size": 772},
+    {"name": "ServiceNow", "size": 3322}
+   ]
+  },
+  {
+   "name": "IEO",
+   "children": [
+    {"name": "Basic", "size": 8833},
+    {"name": "Network", "size": 1732},
+    {"name": "Hardware", "size": 3623},
+    {"name": "Storage", "size": 10066}
+   ]
+  },
+   {
+   "name": "GSD Business",
+   "children": [
+    {
+     "name": "u2vmharmonyst04",
+     "children": [
+      {"name": "Basic", "size": 1302},
+      {"name": "Network", "size": 24593},
+      {"name": "Hardware", "size": 652},
+      {"name": "Storage", "size": 636},
+      {"name": "Database", "size": 6703}
+     ]
+    },
+    {
+     "name": "ausplfpprd01",
+     "children": [
+      {"name": "Basic", "size": 2138},
+      {"name": "Network", "size": 3824},
+      {"name": "Hardware", "size": 1353},
+      {"name": "Storage", "size": 4665},
+      {"name": "Database", "size": 2649},
+      {"name": "Cluster", "size": 2832},
+      {"name": "DC Location", "size": 4896},
+      {"name": "ServiceNow", "size": 763},
+      {"name": "Creator", "size": 5222},
+      {"name": "DBA", "size": 7862},
+      {"name": "SE", "size": 8435}
+     ]
+    },
+    {
+     "name": "ausplfusprd02",
+     "children": [
+      {"name": "Basic", "size": 20544},
+      {"name": "Network", "size": 19788},
+      {"name": "Hardware", "size": 10349},
+      {"name": "Storage", "size": 3301},
+      {"name": "Cluster", "size": 19382},
+      {
+       "name": "Cluster information",
+       "children": [
+        {"name": "Location", "size": 698},
+        {"name": "Support Team", "size": 5569},
+        {"name": "Network Engineer", "size": 353},
+        {"name": "Support Email", "size": 2247}
+       ]
+      },
+      {"name": "Database", "size": 11275},
+      {"name": "ServiceNow", "size": 7147},
+      {"name": "Provision", "size": 9930}
+     ]
+    },
+    {
+     "name": "ausplnxadm01",
+     "children": [
+      {"name": "Basic", "size": 2313},
+      {"name": "Network", "size": 1880},
+      {"name": "Hardware", "size": 1701},
+      {"name": "Storage", "size": 1117}
+     ]
+    },
+    {
+     "name": "ausultsap24",
+     "children": [
+      {"name": "Basic", "size": 20859},
+      {"name": "Network", "size": 4614},
+      {"name": "Hardware", "size": 10530}
+     ]
+    },
+    {
+     "name": "ausslb2bisen01",
+     "children": [
+      {
+       "name": "Basic",
+       "children": [
+       {"name": "ausplesdata10.us.dell.com", "size": 3534},
+       {"name": "PRODUCTION", "size": 5731},
+       {"name": "WEBLOGIC PLATFORM", "size": 7840},
+       {"name": "Kommana, Chuck", "size": 3416}
+       ]
+      },
+      {
+       "name": "Network",
+       "children": [
+        {"name": "Basic", "size": 3179},
+        {"name": "Network", "size": 4060},
+        {"name": "Hardware", "size": 4138},
+        {"name": "Storage", "size": 1690},
+        {"name": "Database", "size": 1830}
+       ]
+      },
+      {
+       "name": "Hardware",
+       "children": [
+        {"name": "FisheyeTreeFilter", "size": 5219},
+        {"name": "GraphDistanceFilter", "size": 3165},
+        {"name": "VisibilityFilter", "size": 3509}
+       ]
+      },
+      {"name": "Storage", "size": 1286},
+      {
+       "name": "SCSI",
+       "children": [
+        {"name": "Labeler", "size": 9956},
+        {"name": "RadialLabeler", "size": 3899},
+        {"name": "StackedAreaLabeler", "size": 3202}
+       ]
+      },
+      {
+       "name": "Database",
+       "children": [
+        {"name": "AxisLayout", "size": 6725},
+        {"name": "BundledEdgeRouter", "size": 3727},
+        {"name": "CircleLayout", "size": 9317},
+        {"name": "CirclePackingLayout", "size": 12003},
+        {"name": "DendrogramLayout", "size": 4853},
+        {"name": "ForceDirectedLayout", "size": 8411},
+        {"name": "IcicleTreeLayout", "size": 4864},
+        {"name": "IndentedTreeLayout", "size": 3174},
+        {"name": "Layout", "size": 7881},
+        {"name": "NodeLinkTreeLayout", "size": 12870},
+        {"name": "PieLayout", "size": 2728},
+        {"name": "RadialTreeLayout", "size": 12348},
+        {"name": "RandomLayout", "size": 870},
+        {"name": "StackedAreaLayout", "size": 9121},
+        {"name": "TreeMapLayout", "size": 9191}
+       ]
+      },
+      {"name": "Cluster", "size": 2490},
+      {"name": "ServiceNow", "size": 5248},
+      {"name": "Provision", "size": 4190},
+      {"name": "Creator", "size": 2581},
+      {"name": "DBA", "size": 2023}
+     ]
+    },
+    {"name": "Visualization", "size": 16540}
+   ]
+  }
+ ]
+}
