@@ -2,6 +2,14 @@
 <meta charset="utf-8">
 
 <style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 50px;
+        color: #F08080;
+    }
+   
 	.node {
 		cursor: pointer;
 	}
@@ -37,7 +45,7 @@
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
 <!-- This will be attached to select2, only static element on the page -->
 <div id="search"></div>
-
+<h1>Data Visualization is more than a UI, it is a PATTERN</h1>
 <!-- Main -->
 <script type="text/javascript">
 
@@ -153,13 +161,25 @@
 			data: select2_data,
 			containerCssClass: "search"
 		});
-        var paths = searchTree(root,"IP: 10.160.121.183",[]);
-		if(typeof(paths) !== "undefined"){
-			openPaths(paths);
-		}
-		else{
-			alert(e.object.text+" not found!");
-		}
+        
+        var SearchString=["FQDN: ausfldpgtmdb02.us.dell.com CONNECTION TIMED OUT",
+                          "FQDN: xmnulivrwl02.xmn.apac.dell.com CONNECTION TIMED OUT",
+                          "FQDN: auspldpgtmdb02.us.dell.com SCRIPT FAILURE",
+                          "FQDN: ausfldpgtmdb01.us.dell.com SCRIPT FAILURE",
+                          "FQDN: maaplicclog01.maa.apac.dell.com UNKNOWN FAILURE"]
+        
+        for(var i=0; i<SearchString.length;i++)
+        {
+              var paths = searchTree(root,SearchString[i],[]);
+              console.log(paths);
+		      if(typeof(paths) !== "undefined"){
+			     openPaths(paths);
+		      }
+		      else{
+			     alert(SearchString[i]+" not found!");
+		      }
+         }
+      
 	});
 	//attach search box listener
 	$("#search").on("select2-selecting", function(e) {
